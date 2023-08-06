@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,41 +10,51 @@
     <!--font awesome-->
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <script src="https://kit.fontawesome.com/810e5c96f7.js" crossorigin="anonymous"></script>
+
 
     <!--Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link 
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" 
-rel="stylesheet">
-
-<!--css -->
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--css -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+
+<body>
     <header>
+        <!-- inserting logo -->
         <img src="logo.png" width="120px" height="50px">
-        <div class="inputSearch desktop">
+
+        <!-- <div class="inputSearch desktop">
             <form id="searchForm">
-            <input type="text" placeholder="Type to search.." id="searchInput">
-             <span><i class="fa-solid fa-search"></i></span>
+                <input type="text" placeholder="Type to search.." id="searchInput">
+                <span><i class="fa-solid fa-search"></i></span>
             </form>
+        </div> -->
+        <div class="inputSearch">
+            <input type="text" placeholder="Type to search..">
+            <span><i class="fa-solid fa-search"></i></span>
+            
         </div>
-        <nav class="desktop"> 
+
+        <nav class="desktop">
             <ul>
                 <li onclick="Search('ipl2023')">IPL 2023</li>
                 <li onclick="Search('tech')">Tech</li>
                 <li onclick="Search('food')">Food</li>
                 <li onclick="Search('movies')">Movies</li>
                 <li onclick="Search('business')">Business</li>
+                
             </ul>
         </nav>
+        <li><a href="login.html">login</a></li>
+        <img src="images.png" id="icon">
 
         <div class="menuBtn">
             <i class="fa-solid fa-bars"></i>
-        </div> 
+        </div>
 
 
 
@@ -61,25 +72,40 @@ rel="stylesheet">
             </nav>
 
             <div class="inputSearch">
-                <form id="searchFormMobile" id="searchInputMobile">
-                <input type="text" placeholder="Type to search..">
-                 <span><i class="fa-solid fa-search"></i></span>
+                <form id="dsnj">
+                    <div></div>
                 </form>
-                </div>
+                <form id="searchFormMobile" id="searchInputMobile">
+                    <input type="text" placeholder="Type to search..">
+                    <span><i class="fa-solid fa-search"></i></span>
+                </form>
+            </div>
         </div>
-    </header>  
-<!-- main -->
+    </header>
+    <!-- main -->
 
-<main>
-     
-
+    <main>
 
 
-     
-</main>
 
-    
-    
+
+
+    </main>
+    <script>
+        var icon=document.getElementById("icon");
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src="sunamoled.png";
+            }else{
+                icon.src="images.png";
+            }
+        }
+    </script>
+
+
+
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
