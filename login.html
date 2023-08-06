@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyDigest.</title>
+
+    <!--font awesome-->
+
+
+    <script src="https://kit.fontawesome.com/810e5c96f7.js" crossorigin="anonymous"></script>
+
+
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--css -->
+    <link rel="stylesheet" href="logstyle.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" id="login_email"  required>
+                <i class='bx bxs-user' ></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password"  id="login_psw"  required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="login">Login</button>
+            <div class="register-link">
+                <p>Don't have an account?  <a href="signup.html">Register</a></p>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+<script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+ 
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrxEQhNa_k9eYHUVtg_AeUh2WcbCRAK4E",
+      authDomain: "dailydigest-d71c1.firebaseapp.com",
+      projectId: "dailydigest-d71c1",
+      storageBucket: "dailydigest-d71c1.appspot.com",
+      messagingSenderId: "225122117676",
+      appId: "1:225122117676:web:ce2576c8376753fca68989",
+      measurementId: "G-J8ZK5Z4V4H"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+
+
+    document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_psw").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		.then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user);
+            alert(user.email+" Login successfully!!!");
+            document.getElementById('logout').style.display = 'block';
+            // ...
+		})
+		.catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            alert(errorMessage);
+		});		  		  
+	});
+	
+</script>    
+</html>
