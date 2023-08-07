@@ -72,7 +72,7 @@ searchBtnMobile.addEventListener("submit",async(e)=>{
   
 })
 
-async function InputSearch(query){
+async function Search(query){
    const data = await fetchData(query)
    renderMain(data.articles)
 }
