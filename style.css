@@ -1,36 +1,54 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --primary-color:white;
+    --secondary-color:black;
 
+}
+
+.dark-theme{
+    --primary-color:black;
+    ---secondary-color:white;
+}
 body{
     font-family: 'Poppins',sans-serif;
     font-size: 16px;
     margin: 0;
-    background: #f5f6f9;
+    
+    background:var(--primary-color);
 }
 
 header{
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     height: 55px;
     display: flex;
     align-items: center;
     padding:5px 10px;
     justify-content: space-between;
     box-shadow: 0px 3px 10px 0 rgba(80,119,242,0.3);
+    
+}
+
+#icon{
+    width:20px;
+    height:25px;
+    cursor:pointer;
+    
 }
 
 
-/* nav.inputSearch{
+
+nav.inputSearch{
     display:none;
 
 
-} */
+} 
  
-
-nav ul{
+/* nav ul{
     display: flex;
     list-style: none;
-    gap:15px;
+    gap:10 px;
     padding:0;
 }
 nav ul li{
@@ -38,13 +56,14 @@ nav ul li{
 }
 nav ul li:hover{
     color:#4361ee;
-}
+} */
+
 .inputSearch,
 .form{
    display: flex;
     align-items:center;
     height:45px;
-    background-color: red;
+    
     width:400px;
     border-radius: 35px;
     overflow:hidden;
@@ -58,9 +77,10 @@ nav ul li:hover{
     outline:none;
     font-size:16px;
 }
+
 .inputSearch span{
-    width:60px;
-    background-color: #4361ee;
+    width:70px;
+    background-color:#4361ee ;
     height:100%;
     display: flex;
     justify-content: center;
@@ -68,7 +88,7 @@ nav ul li:hover{
     font-size: 18px;
     color:#ffffff;
 }
-
+ 
 .menuBtn{
     font-size: 20px;
     width:40px;
@@ -86,6 +106,7 @@ nav ul li:hover{
 
 .desktop{
     display:none;
+
 }
 
 @media all and (min-width:700px){
@@ -106,7 +127,7 @@ header{
     top:75px;
     width: 100%;
     max-width: 700px;
-    background-color: #f5f6f9;
+    background-color: var(--primary-color);
     height: calc(100% - 150px);
     padding:20px;
     box-shadow: none;
@@ -143,9 +164,9 @@ main{
     margin:auto;
 }
 .card{
-display:flex;
+display:auto;
 flex-direction: column;
-max-width: 400px;
+max-width: 380px;
 box-shadow: 7px 7px 25px 1px rgba(0,0,0,0.06);
 border-radius: 5px;
 overflow: hidden;
@@ -167,7 +188,8 @@ background: white;
 .publishbyDate{
     display:flex;
    align-items: center;
-   color:#a5a1a1;
+   justify-content: space-between;
+   color:var(--primary-color);
 
 }
 .publishbyDate p{
@@ -176,7 +198,7 @@ background: white;
 }
 .publishbyDate span{
     padding: 0px 10px;
-    background-color: red;
+   
 }
 
 
@@ -207,9 +229,25 @@ background: white;
 }
 
 
+nav ul{
+    display: flex;
+    list-style: none;
+    gap:10 px;
+    padding:0;
+}
+nav ul li{
+    cursor: pointer;
+    padding-right: 15px;
+}
+nav ul li:hover{
+    color:#4361ee;
+} 
 
 
 
-
-
+.bx bxs-user-rectangle{
+    width:20px;
+    height:25px;
+    cursor:pointer;   
+}
 
